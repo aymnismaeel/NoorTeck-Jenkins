@@ -18,15 +18,15 @@ public class MercuryStepDef extends Constants {
 	@Given("user navigate to Mercury Application")
 	public void navigateToApp() {
 		String url = "https://demo.guru99.com/test/newtours/index.php";
-//		String key = "webdriver.chrome.driver";
-//		String path = "C:\\Users\\NoorTeck\\OneDrive - glbtechexperts.com\\Desktop\\B7-Selenium\\chromedriver.exe"; 
-//		System.setProperty(key, path);
-		WebDriverManager.chromedriver().setup();
+		String key = "webdriver.chrome.driver";
+		String path = "C:\\Users\\15712\\Desktop\\B7-Selenium\\chromedriver.exe"; 
+		System.setProperty(key, path);
+		//WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(url);
-		
+		// test
 		mercuryHomeObj = new MercuryHompage();
 		mercuryRegisterObj  =new MercuryRegisterPage();
 	}
