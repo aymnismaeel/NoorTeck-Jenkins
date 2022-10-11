@@ -3,6 +3,7 @@ package com.noorteck.qa.steps;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.noorteck.qa.pages.MercuryHompage;
 import com.noorteck.qa.pages.MercuryRegisterPage;
@@ -21,8 +22,12 @@ public class MercuryStepDef extends Constants {
 		String key = "webdriver.chrome.driver";
 		String path = "C:\\Users\\15712\\Desktop\\B7-Selenium\\chromedriver.exe"; 
 		System.setProperty(key, path);
-		//WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		
+	//	WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.setHeadless(true);
+		
+		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(url);
